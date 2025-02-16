@@ -1,8 +1,8 @@
 #include "iostream"
 #include "test_examples.h"
 
-int add(int a, int b)
-{
+
+int add(int a, int b){
     return a + b;
 }
 
