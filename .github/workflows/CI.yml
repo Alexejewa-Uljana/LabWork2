@@ -30,10 +30,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependecies
+      run: sudo apt-get update && sudo apt-get install -y g++ cmake make libgtest-dev libgmock-dev
+
     - name: Build Google Tests
       run: |
-        cd /usr/src/googletest
-        sudo cmake . && sudo make && sudo cp lib/*.a /usr/lib
+        mkdir -p /tmp/gtest
+        cd /tmp/gtest
+        cmake /usr/src/googletest
+        make
+        sudo cp lib/*.a /usr/lib
 
     - name: Run Tests
       run: ./test-LABWORK2
