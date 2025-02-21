@@ -40,7 +40,7 @@ test: $(TESTPROJECT)
 $(TESTPROJECT): $(LIBPROJECT) $(TEST-OBJ)
 	$(CXX) -o $@ $(TEST-OBJ) $(LDGTESTFLAGS)
 
-all: $(PROJECT)
+all: $(PROJECT) test
 
 .PHONY: clean
 
