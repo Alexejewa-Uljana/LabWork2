@@ -5,7 +5,7 @@
 TEST(test_example, add)
 {
     EXPECT_EQ(add(1, 2), 3);
-    EXPECT_EQ(add(1, 2), 0);
+    EXPECT_EQ(add(1, -2), -1);
 }
 
 int main(int argc, char **argv)
